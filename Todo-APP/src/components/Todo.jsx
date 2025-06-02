@@ -5,11 +5,20 @@ import { useState } from 'react';
 
 const Todo = () => {
     const [todo, setTodo] = useState('');
+    const [todos, setTodos] = useState([]);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setTodos([...todos, todo]);
+        setTodo('');
+    
+        
+    }
   return (
     <div className="todo-container">
       <h1>Todo List</h1>
       
-      <form className="todo-input-container">
+      <form className="todo-input-container" onSubmit={handleSubmit}>
         <input 
           type="text" 
           placeholder="Add a new task..."
@@ -21,6 +30,7 @@ const Todo = () => {
           Add Task
         </button>
       </form>
+      {console.log(todos)}
 
       <div className="todo-list">
         <div className="todo-item">
