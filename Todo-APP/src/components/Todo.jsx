@@ -1,6 +1,7 @@
 import React from 'react';
 import './Todo.css';
 import { useState } from 'react';
+import TodoItem from './TodoItem';
 
 
 const Todo = () => {
@@ -10,9 +11,7 @@ const Todo = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setTodos([...todos, todo]);
-        setTodo('');
-    
-        
+        setTodo('');        
     }
   return (
     <div className="todo-container">
@@ -30,28 +29,13 @@ const Todo = () => {
           Add Task
         </button>
       </form>
-      {console.log(todos)}
-
-      <div className="todo-list">
-        <div className="todo-item">
-          <input type="checkbox" className="todo-checkbox" />
-          <span className="todo-text">Learn React</span>
-          <button className="delete-button">×</button>
-        </div>
-        
-        <div className="todo-item">
-          <input type="checkbox" className="todo-checkbox" />
-          <span className="todo-text">Build Todo App</span>
-          <button className="delete-button">×</button>
-        </div>
-        
-        <div className="todo-item">
-          <input type="checkbox" className="todo-checkbox" />
-          <span className="todo-text">Practice JavaScript</span>
-          <button className="delete-button">×</button>
-        </div>
+        {todos.map((item)=>(
+         <TodoItem key={item} item={item} />
+        )) }
+      
+     
       </div>
-    </div>
+
   )
 }
 
