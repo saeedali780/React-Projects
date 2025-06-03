@@ -152,7 +152,9 @@ h1 {
   color: #666;
   font-size: clamp(0.8rem, 2vw, 0.9rem);
 }
-
+.completed{
+  text-decoration: line-through;
+}
 /* Media Queries */
 @media screen and (max-width: 480px) {
   .todo-container {
