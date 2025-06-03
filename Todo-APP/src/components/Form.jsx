@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import './Todo.css';
 
 const Form = ({todos,setTodos}) => {
-    const [todo, setTodo] = useState('');
+    const [todo, setTodo] = useState({name:"",done:false});
    
     const handleSubmit = (e) => {
         e.preventDefault();
         setTodos([...todos, todo]);
-        setTodo('');        
+        setTodo({name:"",done:false});        
     }
 
   return (
@@ -17,8 +17,8 @@ const Form = ({todos,setTodos}) => {
         type="text" 
         placeholder="Add a new task..."
         className="todo-input"
-        value={todo}
-        onChange={(e) => setTodo(e.target.value)}
+        value={todo.name}
+        onChange={(e) => setTodo({name: e.target.value, done: false})}
     />
     <button type="submit" className="add-button">
         Add Task

@@ -11,7 +11,7 @@ const TodoItem = ({item,todos,setTodos}) => {
    
     <div className="todo-item">
       <input type="checkbox" className="todo-checkbox" />
-      <span className="todo-text">{item}</span>
+      <span className="todo-text">{item.name  }</span>
       <button onClick={()=> handleDelete(item)} className="delete-button">×</button>
     </div>
   )
