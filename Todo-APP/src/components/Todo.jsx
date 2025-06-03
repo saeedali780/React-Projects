@@ -11,7 +11,7 @@ const Todo = () => {
         <div className="todo-container">
            <Header />
             <Form todos={todos} setTodos={setTodos}/>
-           <TodoLists todos={todos}  />
+           <TodoLists todos={todos} setTodos={setTodos}  />
            <Footer/>
         </div>
     )
