@@ -8,10 +8,10 @@ const TodoItem = ({item, todos, setTodos}) => {
   }
 
   const handleCheck = (item) => {
-    const newArray = todos.map((todo) => 
+   
+    setTodos( todos.map((todo) => 
       todo === item ? { ...todo, done: !todo.done } : todo
-    );
-    setTodos(newArray)
+    ))
   
     
   }
