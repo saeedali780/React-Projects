@@ -1,12 +1,37 @@
-# React + Vite
+# Reactjs Projects 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains all my React.js practice and learning projects.  
+Each project is placed in its own folder for easy organization and deployment.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📁 Projects List
 
-## Expanding the ESLint configuration
+### 📝 1. Todo App
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+A simple and responsive Todo list application built using React.  
+Users can add and delete tasks in real-time. A great project to practice React hooks and component structure.
+
+🔗 **Live Demo:** [View on Netlify](https://addintodo.netlify.app/)
+
+📂 **Folder:** `/Todo-App`
+
+---
+
+## 📦 Technologies Used
+
+- React.js
+- JSX
+- CSS
+- Netlify (for deployment)
+- Git & GitHub (for version control)
+
+---
+
+## 🛠 How to Run a Project Locally
+
+```bash
+git clone https://github.com/saeedali780/Reactjs-projects.git
+cd Reactjs-projects/todo-app
+npm install
+npm start
