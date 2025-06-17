@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import './Search.css';
 
 const URL = "https://api.spoonacular.com/recipes/complexSearch"; 
-const API_KEY = "a82fb4f46d3442cd80bc1fe258af652b";
+const API_KEY = "7cb08b3c5ea34b4db7b32c971bafc6f1";
 
-const Search = ({foodData,setFoodData}) => {
+const Search = ({foodData, setFoodData}) => {
   const [query, setQuery] = useState("pizza");
 
   useEffect(() => {
@@ -25,13 +26,29 @@ const Search = ({foodData,setFoodData}) => {
   }, [query]);
 
   return (
-    <div>
-      <input 
-        type="text" 
-        value={query} 
-        onChange={(e) => setQuery(e.target.value)} 
-        placeholder="Search food..."
-      />
+    <div className="search-section">
+      <div className="search-container">
+        <div className="search-header">
+          <h2>Find Your Perfect Recipe</h2>
+          <p>Search through thousands of recipes from around the world</p>
+        </div>
+        <div className="search-box">
+          <input 
+            type="text" 
+            value={query} 
+            onChange={(e) => setQuery(e.target.value)} 
+            placeholder="Search for recipes, ingredients, or cuisines..."
+            className="search-input"
+          />
+        </div>
+        <div className="search-tags">
+          <span className="search-tag">Popular:</span>
+          <button className="tag-btn" onClick={() => setQuery("pizza")}>Pizza</button>
+          <button className="tag-btn" onClick={() => setQuery("pasta")}>Pasta</button>
+          <button className="tag-btn" onClick={() => setQuery("salad")}>Salad</button>
+          <button className="tag-btn" onClick={() => setQuery("dessert")}>Dessert</button>
+        </div>
+      </div>
     </div>
   );
 };

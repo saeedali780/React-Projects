@@ -1,0 +1,46 @@
+.app {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.food-container {
+  display: grid;
+  grid-template-columns: repeat(4, 220px);
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+@media (max-width: 1024px) {
+  .food-container {
+    grid-template-columns: repeat(3, 220px);
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+  
+  .food-container {
+    grid-template-columns: repeat(2, 200px);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .food-container {
+    grid-template-columns: repeat(1, 280px);
+  }
+} 
