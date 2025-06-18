@@ -9,6 +9,8 @@ import About from './components/About';
 import RecipeViewDetails from './components/RecipeViewDetails';
 import ContactUs from './components/ContactUs';
 import PrivacyPolicy from './components/PrivacyPolicy';
+import TermsOfService from './components/TermsOfService';
+import CookiePolicy from './components/CookiePolicy';
 import './App.css';
 
 function App() {
@@ -34,6 +36,8 @@ function App() {
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/recipe/:id" element={<RecipeViewDetails foodId={foodId}/>} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
         </Routes>
       </div>
       <Footer />
