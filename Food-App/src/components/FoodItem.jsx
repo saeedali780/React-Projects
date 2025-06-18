@@ -3,13 +3,15 @@ import { useNavigate } from 'react-router-dom';
 import './FoodItem.css';
 
 const FoodItem = ({food, setFoodId}) => {
+  console.log(food);
+  
   const navigate = useNavigate();
 
   const handleViewRecipe = () => {
     console.log(food.id);
     
     setFoodId(food.id)
-    navigate(`/recipe/${food.id}`);
+    navigate(`/recipe/${food.title}`);
   };
 
   return (

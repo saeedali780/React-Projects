@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './RecipeViewDetails.css';
 
 const RecipeViewDetails = ({foodId}) => {
-  
+  const [food,setFood] = useState({})
+  const [isLoading,setIsLoading] = useState(true)
   const URL = `https://api.spoonacular.com/recipes/${foodId}/information`;
   const API_KEY = "7cb08b3c5ea34b4db7b32c971bafc6f1";
 
@@ -12,10 +13,11 @@ const RecipeViewDetails = ({foodId}) => {
       const response = await fetch(`${URL}?apiKey=${API_KEY}`);
       const data = await response.json()
       console.log(data);
-      
+      setFood(data);
+      setIsLoading(false)
     }
     fetchFood()
-  },[])
+  },[foodId])
   const { id } = useParams();
 
   return (
@@ -23,29 +25,42 @@ const RecipeViewDetails = ({foodId}) => {
       <div className="recipe-header">
         <div className="recipe-image-container">
           <img 
-            src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c" 
+            src={food.image}
             alt="Recipe" 
             className="recipe-main-image"
           />
           <div className="recipe-badge">Popular</div>
         </div>
         <div className="recipe-title-section">
-          <h1>Delicious Healthy Salad</h1>
+          <h1>{food.title}</h1>
+          <div className="price-container">
+            <h3 className="recipe-price">
+              <span className="price-label">Price:</span>
+              <span className="price-value">${food.pricePerServing ? (food.pricePerServing / 100).toFixed(2) : 'N/A'}</span>
+              <span className="price-unit">per serving</span>
+            </h3>
+            {food.pricePerServing && (
+              <p className="total-price">
+                Total: ${((food.pricePerServing * food.servings) / 100).toFixed(2)}
+              </p>
+            )}
+          </div>
           <div className="recipe-meta">
             <span className="cooking-time">
-              <span className="meta-icon">⏱️</span> 30 mins
+              <span className="meta-icon">⏱️</span> {food.readyInMinutes} mins
             </span>
             <span className="difficulty">
               <span className="meta-icon">⭐</span> Easy
             </span>
             <span className="servings">
-              <span className="meta-icon">👥</span> 4 servings
+              <span className="meta-icon">👥</span> {food.servings}
             </span>
           </div>
           <div className="recipe-tags">
-            <span className="tag">Healthy</span>
-            <span className="tag">Vegetarian</span>
-            <span className="tag">Quick</span>
+           
+            <span className="tag">{food.vegetarian ? '🥕 Vegetarian': '🥩 Non Vegetarian  '}</span>
+            <span className="tag">{food.vegan ? '🐄 Vegan':''}</span>
+            
           </div>
         </div>
       </div>
@@ -73,15 +88,15 @@ const RecipeViewDetails = ({foodId}) => {
           </div>
 
           <div className="recipe-instructions">
+           
             <h2>Instructions</h2>
-            <ol>
-              <li>Wash and prepare all vegetables</li>
-              <li>Combine salad greens, cucumber, bell pepper, tomatoes, and red onion in a large bowl</li>
-              <li>Whisk together olive oil and balsamic vinegar</li>
-              <li>Drizzle dressing over salad and toss gently</li>
-              <li>Sprinkle with feta cheese</li>
-              <li>Season with salt and pepper to taste</li>
-            </ol>
+            {isLoading ? (<p>loading...</p>)
+             :(  <ol>
+              
+              {food.analyzedInstructions[0].steps.map((step, key)=> (<li key={key}>{step.step}</li>))}
+              </ol>
+              )} 
+           
           </div>
         </div>
 
