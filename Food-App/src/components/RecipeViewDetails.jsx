@@ -75,15 +75,15 @@ const RecipeViewDetails = ({foodId}) => {
           <div className="recipe-ingredients">
             <h2>Ingredients</h2>
             <ul>
-              <li>2 cups mixed salad greens</li>
-              <li>1 cucumber, sliced</li>
-              <li>1 bell pepper, diced</li>
-              <li>1 cup cherry tomatoes</li>
-              <li>1/4 red onion, thinly sliced</li>
-              <li>1/4 cup feta cheese</li>
-              <li>2 tablespoons olive oil</li>
-              <li>1 tablespoon balsamic vinegar</li>
-              <li>Salt and pepper to taste</li>
+              {isLoading ? (
+                <p>Loading ingredients...</p>
+              ) : (
+                food.extendedIngredients?.map((ingredient, index) => (
+                  <li key={index}>
+                    {ingredient.amount} {ingredient.unit} {ingredient.originalName}
+                  </li>
+                ))
+              )}
             </ul>
           </div>
 
@@ -93,7 +93,7 @@ const RecipeViewDetails = ({foodId}) => {
             {isLoading ? (<p>loading...</p>)
              :(  <ol>
               
-              {food.analyzedInstructions[0].steps.map((step, key)=> (<li key={key}>{step.step}</li>))}
+              {food.analyzedInstructions[0].steps.map((step)=> (<li>{step.step}</li>))}
               </ol>
               )} 
            

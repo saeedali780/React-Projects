@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -33,11 +34,11 @@ const Footer = () => {
           <div className="footer-section">
             <h3 className="footer-heading">Quick Links</h3>
             <ul className="footer-links">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Recipes</a></li>
-              <li><a href="#">Categories</a></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><Link to="/">Home</Link></li>
+              <li><Link href="#">Recipes</Link></li>
+              <li><Link href="#">Categories</Link></li>
+              <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
             </ul>
           </div>
 
@@ -72,7 +73,7 @@ const Footer = () => {
             © {new Date().getFullYear()} Foodie. All rights reserved.
           </p>
           <div className="footer-bottom-links">
-            <a href="#">Privacy Policy</a>
+            <Link to="/privacy-policy">Privacy Policy</Link>
             <a href="#">Terms of Service</a>
             <a href="#">Cookie Policy</a>
           </div>

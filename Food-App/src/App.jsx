@@ -7,6 +7,8 @@ import Banner from './components/Banner';
 import Footer from './components/Footer';
 import About from './components/About';
 import RecipeViewDetails from './components/RecipeViewDetails';
+import ContactUs from './components/ContactUs';
+import PrivacyPolicy from './components/PrivacyPolicy';
 import './App.css';
 
 function App() {
@@ -29,7 +31,9 @@ function App() {
             </>
           } />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<ContactUs />} />
           <Route path="/recipe/:id" element={<RecipeViewDetails foodId={foodId}/>} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
       </div>
       <Footer />
