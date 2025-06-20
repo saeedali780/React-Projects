@@ -378,4 +378,31 @@
 .nutrition-grid,
 .recipe-actions {
   transition: all 0.3s ease-in-out;
+}
+
+.dark-mode .recipe-details-container {
+  background-color: #23272a;
+  color: #f1f1f1;
+}
+.dark-mode .recipe-header,
+.dark-mode .recipe-content {
+  background: #181a1b;
+  color: #f1f1f1;
+}
+.dark-mode .recipe-title-section h1,
+.dark-mode .recipe-content h2,
+.dark-mode .nutrition-value {
+  color: #ffb86b;
+}
+.dark-mode .tag {
+  background: #23272a;
+  color: #ffb86b;
+}
+.dark-mode .save-recipe-btn {
+  background: #ffb86b;
+  color: #23272a;
+}
+.dark-mode .share-recipe-btn {
+  background: #23272a;
+  color: #ffb86b;
 } 

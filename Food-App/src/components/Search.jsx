@@ -10,7 +10,7 @@ const Search = ({foodData, setFoodData}) => {
   useEffect(() => {
     const fetchFood = async () => {
       try {
-        const res = await fetch(`${URL}?query=${query}&apiKey=${API_KEY}`);
+        const res = await fetch(`${URL}?query=${query}&addRecipeInformation=true&apiKey=${API_KEY}`);
         if (!res.ok) {
           throw new Error("Unauthorized or some other error");
         }

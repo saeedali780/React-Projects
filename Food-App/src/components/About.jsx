@@ -1,6 +1,7 @@
 import React from 'react';
 import './About.css';
 
+
 const About = () => {
   return (
     <div className="about-section">
@@ -70,23 +71,23 @@ const About = () => {
           <div className="team-grid">
             <div className="team-member">
               <div className="member-image">
-                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Team member" />
+                <img src="/assets/mypic.png" alt="Founder & CEO" />
               </div>
-              <h3>John Smith</h3>
+              <h3>Saeed Ali</h3>
               <p>Founder & CEO</p>
             </div>
             <div className="team-member">
               <div className="member-image">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" alt="Team member" />
+                <img src="/assets/hanzala.jpeg" />
               </div>
-              <h3>Sarah Johnson</h3>
+              <h3>Hanzala Memon</h3>
               <p>Head Chef</p>
             </div>
             <div className="team-member">
               <div className="member-image">
-                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Team member" />
+                <img src="/assets/hamza.jpeg" />
               </div>
-              <h3>Michael Chen</h3>
+              <h3>Hamza Raza</h3>
               <p>Content Director</p>
             </div>
           </div>

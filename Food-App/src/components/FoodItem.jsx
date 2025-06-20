@@ -27,12 +27,16 @@ const FoodItem = ({food, setFoodId}) => {
       
       <div className="food-content">
         <h2 className="food-title">{food.title}</h2>
+        <div className="food-price-time">
+          <span className="food-price">
+            <span role="img" aria-label="Price">💲</span> {food.pricePerServing ? `$${(food.pricePerServing/100).toFixed(2)}` : 'N/A'}
+          </span>
+          <span className="food-time">
+            <span role="img" aria-label="Time">⏱️</span> {food.readyInMinutes ? `${food.readyInMinutes} min` : 'N/A'}
+          </span>
+        </div>
         
         <div className="food-meta">
-          <div className="meta-item">
-            <span className="meta-icon">⏱️</span>
-            <span>30m</span>
-          </div>
           <div className="meta-item">
             <span className="meta-icon">⭐</span>
             <span>4.8</span>

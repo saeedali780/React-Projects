@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import ThemeToggle from './ThemeToggle';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -17,7 +18,6 @@ const Navbar = () => {
           <span className="logo-icon">🍽️</span>
           <span className="logo-text">Foodie</span>
         </Link>
-        
         <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle menu">
           <div className={`hamburger ${isMenuOpen ? 'active' : ''}`}>
             <span></span>
@@ -25,18 +25,14 @@ const Navbar = () => {
             <span></span>
           </div>
         </button>
-
         <div className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
           <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>Home</Link>
           <Link to="/recipes" className={`nav-link ${location.pathname === '/recipes' ? 'active' : ''}`}>Recipes</Link>
           <Link to="/categories" className={`nav-link ${location.pathname === '/categories' ? 'active' : ''}`}>Categories</Link>
           <Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}>About</Link>
         </div>
-
         <div className="navbar-actions">
-          <button className="theme-toggle">
-            <span className="theme-icon">🌙</span>
-          </button>
+          <ThemeToggle />
           <button className="profile-btn">
             <span className="profile-icon">👤</span>
           </button>

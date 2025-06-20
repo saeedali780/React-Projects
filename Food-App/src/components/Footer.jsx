@@ -35,8 +35,8 @@ const Footer = () => {
             <h3 className="footer-heading">Quick Links</h3>
             <ul className="footer-links">
               <li><Link to="/">Home</Link></li>
-              <li><Link href="#">Recipes</Link></li>
-              <li><Link href="#">Categories</Link></li>
+              <li><Link to="/recipes">Recipes</Link></li>
+              <li><Link to="/categories">Categories</Link></li>
               <li><Link to="/about">About Us</Link></li>
               <li><Link to="/contact">Contact</Link></li>
             </ul>
@@ -45,11 +45,11 @@ const Footer = () => {
           <div className="footer-section">
             <h3 className="footer-heading">Categories</h3>
             <ul className="footer-links">
-              <li><a href="#">Breakfast</a></li>
-              <li><a href="#">Lunch</a></li>
-              <li><a href="#">Dinner</a></li>
-              <li><a href="#">Desserts</a></li>
-              <li><a href="#">Drinks</a></li>
+              <li><Link to="/breakfast">Breakfast</Link></li>
+              <li><Link to="/lunch">Lunch</Link></li>
+              <li><Link to="/dinner">Dinner</Link></li>
+              <li><Link to="/desserts">Desserts</Link></li>
+              <li><Link to="/drinks">Drinks</Link></li>
             </ul>
           </div>
 

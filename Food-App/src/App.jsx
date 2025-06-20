@@ -11,11 +11,18 @@ import ContactUs from './components/ContactUs';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService';
 import CookiePolicy from './components/CookiePolicy';
+import Recipe from './components/Recipe';
+import Categories from './components/Categories';
+import Breakfast from './components/Breakfast';
+import Lunch from './components/Lunch';
+import Dinner from './components/Dinner';
+import Desserts from './components/Desserts';
+import Drinks from './components/Drinks';
 import './App.css';
 
 function App() {
   const [foodData, setFoodData] = useState([]);
-  const [foodId,setFoodId] = useState('656329')
+  const [foodId, setFoodId] = useState('656329');
   return (
     <div className="app">
       <Navbar />
@@ -38,6 +45,13 @@ function App() {
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
+          <Route path="/recipes" element={<Recipe />} />
+          <Route path="/categories" element={<Categories />} />
+          <Route path="/breakfast" element={<Breakfast />} />
+          <Route path="/lunch" element={<Lunch />} />
+          <Route path="/dinner" element={<Dinner />} />
+          <Route path="/desserts" element={<Desserts />} />
+          <Route path="/drinks" element={<Drinks />} />
         </Routes>
       </div>
       <Footer />
