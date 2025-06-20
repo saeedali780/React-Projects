@@ -18,20 +18,23 @@ import Lunch from './components/Lunch';
 import Dinner from './components/Dinner';
 import Desserts from './components/Desserts';
 import Drinks from './components/Drinks';
+import Preloader from './components/Preloader';
 import './App.css';
 
 function App() {
   const [foodData, setFoodData] = useState([]);
   const [foodId, setFoodId] = useState('656329');
+  const [loading, setLoading] = useState(false);
   return (
     <div className="app">
+      {loading && <Preloader />}
       <Navbar />
       <div className="main-content">
         <Routes>
           <Route path="/" element={
             <>
               <Banner />
-              <Search foodData={foodData} setFoodData={setFoodData} />
+              <Search setFoodData={setFoodData} setLoading={setLoading} />
               <div className="food-container">
                 {foodData.map((food) => (
                   <FoodItem key={food.id} food={food} setFoodId={setFoodId} />

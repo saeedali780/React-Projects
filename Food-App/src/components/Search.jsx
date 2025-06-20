@@ -4,11 +4,12 @@ import './Search.css';
 const URL = "https://api.spoonacular.com/recipes/complexSearch"; 
 const API_KEY = "7cb08b3c5ea34b4db7b32c971bafc6f1";
 
-const Search = ({foodData, setFoodData}) => {
+const Search = ({ setFoodData, setLoading }) => {
   const [query, setQuery] = useState("pizza");
 
   useEffect(() => {
     const fetchFood = async () => {
+      setLoading(true);
       try {
         const res = await fetch(`${URL}?query=${query}&addRecipeInformation=true&apiKey=${API_KEY}`);
         if (!res.ok) {
@@ -19,6 +20,8 @@ const Search = ({foodData, setFoodData}) => {
         setFoodData(data.results)
       } catch (error) {
         console.error("Error fetching food:", error);
+      } finally {
+        setLoading(false);
       }
     };
 
