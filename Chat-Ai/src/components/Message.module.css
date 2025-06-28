@@ -1,0 +1,81 @@
+.userMsg {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+  gap: 12px;
+  align-self: flex-end;
+  margin-bottom: 4px;
+  animation: fadeIn 0.6s;
+}
+.aiMsg {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  align-self: flex-start;
+  margin-bottom: 4px;
+  animation: fadeIn 0.6s;
+}
+.avatar {
+  font-size: 32px;
+  background: #181828;
+  border-radius: 50%;
+  box-shadow: 0 2px 12px 0 #00f0ff55;
+  padding: 6px 10px;
+  border: 2px solid #00f0ff;
+  color: #00f0ff;
+  font-family: 'Orbitron', 'Inter', sans-serif;
+}
+.bubble {
+  background: linear-gradient(135deg, #23234f 0%, #0f2027 100%);
+  color: #fff;
+  border-radius: 22px 22px 6px 22px;
+  padding: 16px 22px;
+  max-width: 75%;
+  box-shadow: 0 2px 16px 0 #00f0ff33;
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  position: relative;
+  border: 2px solid #00f0ff44;
+  font-family: 'Orbitron', 'Inter', sans-serif;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+.userMsg .bubble {
+  background: linear-gradient(135deg, #00f0ff 0%, #764ba2 100%);
+  color: #fff;
+  box-shadow: 0 0 16px 2px #00f0ff99;
+  border: 2px solid #00f0ff;
+}
+.aiMsg .bubble {
+  background: linear-gradient(135deg, #181828 0%, #23234f 100%);
+  color: #fff;
+  box-shadow: 0 0 16px 2px #00ffae55;
+  border: 2px solid #00ffae;
+}
+.name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #00f0ff;
+  margin-bottom: 2px;
+  font-family: 'Orbitron', 'Inter', sans-serif;
+}
+.text {
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 18px;
+}
+.loadingDot {
+  font-size: 20px;
+  color: #00f0ff;
+  animation: blink 1s infinite;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+} 
