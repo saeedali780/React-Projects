@@ -4,7 +4,7 @@ import Header from './components/Header';
 import ChatWindow from './components/ChatWindow';
 import ChatInput from './components/ChatInput';
 
-const apiKey = "";
+const apiKey = "AIzaSyA4fnnsTmYi67gkxIMUmPpFVbTBav7Hpcg";
 
 const App = () => {
   const [input, setInput] = useState("");
